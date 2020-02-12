@@ -2,6 +2,8 @@
 
 package lesson1.task1
 
+import junit.framework.Assert.assertEquals
+import org.junit.Test
 import kotlin.math.*
 
 /**
@@ -48,7 +50,7 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
 /**
  * Пример главной функции
  */
-fun main() {
+fun main(args: Array<String>) {
     val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
     println("Root product: $x1x2")
 }
@@ -119,3 +121,15 @@ fun accountInThreeYears(initial: Int, percent: Int): Double = TODO()
  * Необходимо вывести число, полученное из заданного перестановкой цифр в обратном порядке (например, 874).
  */
 fun numberRevert(number: Int): Int = TODO()
+
+class Tests {
+    @Test
+    fun quadraticEquationRoot() {
+        assertEquals(
+            10.0, quadraticEquationRoot(
+                1.0, -3.0, 2.0),
+            1e-13
+        )
+    }
+}
+
